@@ -1,0 +1,484 @@
+.preview {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: sticky;
+  top: 24px;
+  /* The perforated top edge is rendered via the SVG inside */
+}
+
+/* ── Perforated top edge ── */
+.perforatedEdge {
+  display: block;
+  width: 100%;
+  height: 16px;
+  /* Rendered as an SVG in the component */
+}
+
+/* ── Inner content ── */
+.inner {
+  padding: var(--space-6);
+  padding-top: var(--space-4);
+}
+
+/* ── Header row ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+/* Left column: manifest label + order ID stacked */
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Right column: badge + date stacked, right-aligned */
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+
+.manifestLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  display: block;
+  /* no margin-bottom — gap on headerLeft handles spacing */
+}
+
+.orderId {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+}
+
+.dateText {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  text-align: right;
+  /* no margin-top — gap on headerRight handles spacing */
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-4) 0;
+}
+
+/* ── Sender / Receiver block ── */
+.addressBlock {
+  position: relative;
+}
+
+.addressRole {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.addressName {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.addressDetails {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* Address line (address string, city+pincode row) */
+.addressLine {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* "—" separator between city and pincode — no extra style needed */
+.addressSep {
+  color: var(--color-text-tertiary);
+}
+
+/* Pincode rendered in mono */
+.addressPincode {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+.addressEmpty {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+/* ── Connector between sender and receiver ── */
+.connectorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-3) 0;
+  position: relative;
+  margin: var(--space-2) 0;
+}
+
+.connectorLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  /* Dashed connector line */
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-border-mid) 0px,
+    var(--color-border-mid) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  transform: translateX(-50%);
+}
+
+.connectorDot {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Packages section wrapper ── */
+.packagesSection {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Indicators section wrapper ── */
+.indicatorsSection {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-6) 0;
+}
+
+/* ── Packages ── */
+.sectionLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.packageRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.packageRow:last-child {
+  border-bottom: none;
+}
+
+.packageName {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+/* "Untitled package" fallback — italic, tertiary color */
+.packageNameEmpty {
+  font-style: italic;
+  color: var(--color-text-tertiary);
+  font-weight: var(--weight-regular);
+}
+
+/* Empty packages state inside preview */
+.packagesEmpty {
+  border: 1px dashed var(--color-border-mid);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+.packageMeta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.packageValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  text-align: right;
+  white-space: nowrap;
+  margin-left: var(--space-4);
+  flex-shrink: 0;
+}
+
+.packageDimWeight {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.packageLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.packageRight {
+  flex-shrink: 0;
+  text-align: right;
+  margin-left: var(--space-4);
+}
+
+/* ── Indicators (chips) ── */
+.indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  /* vertical rhythm handled by indicatorsSection padding and sectionLabel margin-bottom */
+}
+
+/* ── Totals footer ── */
+.totalsBar {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.totalRow:last-child {
+  border-bottom: none;
+}
+
+.totalRowChargeable {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--color-accent-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3);
+  margin: var(--space-1) 0;
+  border-bottom: none;
+}
+
+.totalLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.totalLabelChargeable {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-accent-dark);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.totalFootnote {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: var(--weight-regular);
+}
+
+/* Pulse runs on remount (key change) — highlights changed value */
+@keyframes valuePulse {
+  0% {
+    background-color: var(--color-accent-subtle);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.totalValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  animation: valuePulse var(--transition-slow) ease-out forwards;
+}
+
+.totalValueChargeable {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent-dark);
+  animation: none;
+}
+
+.totalUnit {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-left: 2px;
+}
+
+.totalUnitChargeable {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-accent-dark);
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+/* ── Barcode section ── */
+.barcodeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6) 0;
+  border-top: 1px dashed var(--color-border-mid);
+  gap: var(--space-3);
+}
+
+.barcodeLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── Manifest footer ── */
+.manifestFooter {
+  text-align: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* ── Mobile: un-sticky the preview so it scrolls naturally ── */
+@media (max-width: 768px) {
+  .preview {
+    position: static;
+  }
+}
+
+/* ── Empty state ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  padding: 48px var(--space-6) 40px;
+  text-align: center;
+}
+
+/* Grows to fill height, keeps icon+text vertically centered */
+.emptyMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.emptyTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Isometric box icon — stroke via CSS so custom property resolves */
+.emptyBoxIcon {
+  stroke: var(--color-border-mid);
+  stroke-width: 1.5px;
+}
+
+.emptyTitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.emptySubtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Anchored to the bottom of the empty state */
+.emptyAwaitingLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

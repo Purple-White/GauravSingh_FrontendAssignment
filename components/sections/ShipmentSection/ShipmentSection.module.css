@@ -1,0 +1,126 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+  align-items: end;
+}
+
+.orderIdField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Shared label style used for Order ID and Delivery Type headings */
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* Block variant — used above SegmentedControl to give it spacing */
+.labelBlock {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ── Custom date field ──────────────────────────────────────────────────── */
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dateInput {
+  width: 100%;
+  height: 36px;
+  padding: 0 36px 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-mid);
+  background: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dateInput:hover {
+  border-color: var(--color-border-dark);
+}
+
+.dateInput:focus {
+  border-color: var(--color-text-primary);
+  box-shadow: 0 0 0 calc(var(--focus-ring-width) + var(--focus-ring-offset)) var(--focus-ring-color);
+}
+
+/* Hide the native calendar icon; overlay keeps picker clickable */
+.dateInput::-webkit-calendar-picker-indicator {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+}
+
+.dateInput::-webkit-datetime-edit {
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+}
+
+.dateInput::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+/* Autofill override */
+.dateInput:-webkit-autofill,
+.dateInput:-webkit-autofill:hover,
+.dateInput:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset !important;
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+  caret-color: var(--color-text-primary);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Decorative calendar icon — pointer-events: none so clicks pass through to the indicator */
+.calendarIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  pointer-events: none;
+  z-index: 0;
+}

@@ -1,0 +1,37 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+/* ── OrderID Stamp ── */
+.orderStamp {
+  background: var(--color-accent-subtle);
+  padding: var(--space-2) 14px;
+  font-size: var(--text-base);
+  color: var(--color-accent-dark);
+}
+
+/* ── Delivery Type ── */
+.deliveryType {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.standard {
+  background: var(--color-subtle);
+  color: var(--color-text-secondary);
+}
+
+.express {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-dark);
+}

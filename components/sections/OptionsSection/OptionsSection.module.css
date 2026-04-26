@@ -1,0 +1,12 @@
+.checkboxRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .checkboxRow {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+}

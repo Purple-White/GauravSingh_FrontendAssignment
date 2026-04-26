@@ -1,0 +1,102 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Primary ── */
+.primary {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+}
+
+.primary:hover {
+  background: #000000;
+}
+
+.primary:active {
+  transform: scale(0.98);
+}
+
+/* ── Ghost Dashed (Add Package) ── */
+.ghostDashed {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  border: 1.5px dashed var(--color-border-mid);
+  /* CSS dashed borders don't support dash-length/gap natively — this is the standard approach */
+}
+
+.ghostDashed:hover {
+  background: var(--color-subtle);
+  border-style: solid;
+  border-color: var(--color-border-dark);
+  color: var(--color-text-primary);
+}
+
+.ghostDashed:active {
+  transform: scale(0.98);
+}
+
+/* ── Icon Ghost (Remove package ×) ── */
+.iconGhost {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-md);
+  font-weight: var(--weight-regular);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconGhost:hover {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.iconGhost:active {
+  transform: scale(0.95);
+}
+
+/* ── Icon (leading add icon) ── */
+.icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
