@@ -33,13 +33,11 @@ function createEmptyPackage(): Package {
 }
 
 export default function OrderForm() {
-  // Empty on SSR, set once on client to avoid hydration mismatch
   const [orderId, setOrderId] = useState('');
   useEffect(() => {
     setOrderId(generateOrderId());
   }, []);
 
-  // Single flat state object — all form data lives here
   const [form, setForm] = useState<FormState>({
     date: today,
     deliveryType: 'standard',
@@ -50,10 +48,8 @@ export default function OrderForm() {
     insured: false,
   });
 
-  // ── Derived totals via useMemo — never stored as state ──
   const totals = useMemo(() => computeTotals(form.packages), [form.packages]);
 
-  // ── Field-level updaters ──
   const setField = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((prev) => ({ ...prev, [key]: value }));
   };
@@ -90,7 +86,6 @@ export default function OrderForm() {
 
   return (
     <>
-      {/* ── LEFT: Form ── */}
       <div className={styles.form} id="order-form">
         <ShipmentSection
           orderId={orderId}
@@ -129,7 +124,6 @@ export default function OrderForm() {
         />
       </div>
 
-      {/* ── RIGHT: Preview ── */}
       <ShipmentPreview
         orderId={orderId}
         date={form.date}

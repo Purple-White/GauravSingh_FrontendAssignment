@@ -10,7 +10,7 @@ export default function Barcode({ value }: BarcodeProps) {
     const digit = value.charCodeAt(i) % 10;
     const barWidth = digit < 4 ? 1 : digit < 7 ? 2 : 3;
     widths.push(barWidth);
-    widths.push(1); // gap after each bar
+    widths.push(1);
   }
 
   const total = widths.reduce((s, w) => s + w, 0);

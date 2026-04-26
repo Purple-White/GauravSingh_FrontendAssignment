@@ -10,8 +10,8 @@ interface NumberFieldProps {
   placeholder?: string;
   error?: string | null;
   disabled?: boolean;
-  prefix?: string;   // e.g. '₹'
-  suffix?: string;   // e.g. 'kg', 'cm'
+  prefix?: string;
+  suffix?: string;
   min?: number;
   step?: number;
 }

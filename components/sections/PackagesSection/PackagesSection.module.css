@@ -4,14 +4,12 @@
   gap: var(--space-4);
 }
 
-/* ── Package Card ── */
 .packageCard {
   background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   position: relative;
   overflow: hidden;
-  /* Animate entry */
   animation: slideIn 200ms ease forwards;
 }
 
@@ -37,7 +35,7 @@
 }
 
 .packageInner {
-  padding: 20px 20px 20px 24px; /* extra left for accent bar */
+  padding: 20px 20px 20px 24px;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -58,14 +56,12 @@
   text-transform: uppercase;
 }
 
-/* ── Dimensions grid: Weight / L / W / H ── */
 .dimsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--space-3);
 }
 
-/* ── Empty state ── */
 .emptyState {
   border: 1.5px dashed var(--color-border-mid);
   border-radius: var(--radius-xl);
@@ -87,7 +83,6 @@
   color: var(--color-text-tertiary);
 }
 
-/* ── Add button ── */
 .addRow {
   margin-top: var(--space-2);
 }

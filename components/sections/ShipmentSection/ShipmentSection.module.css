@@ -11,7 +11,6 @@
   gap: var(--space-2);
 }
 
-/* Shared label style used for Order ID and Delivery Type headings */
 .label {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -21,7 +20,6 @@
   text-transform: uppercase;
 }
 
-/* Block variant — used above SegmentedControl to give it spacing */
 .labelBlock {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -39,8 +37,6 @@
     gap: var(--space-4);
   }
 }
-
-/* ── Custom date field ──────────────────────────────────────────────────── */
 
 .dateField {
   display: flex;
@@ -80,7 +76,6 @@
   box-shadow: 0 0 0 calc(var(--focus-ring-width) + var(--focus-ring-offset)) var(--focus-ring-color);
 }
 
-/* Hide the native calendar icon; overlay keeps picker clickable */
 .dateInput::-webkit-calendar-picker-indicator {
   display: block;
   opacity: 0;
@@ -101,7 +96,6 @@
   padding: 0;
 }
 
-/* Autofill override */
 .dateInput:-webkit-autofill,
 .dateInput:-webkit-autofill:hover,
 .dateInput:-webkit-autofill:focus {
@@ -111,7 +105,6 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Decorative calendar icon — pointer-events: none so clicks pass through to the indicator */
 .calendarIcon {
   position: absolute;
   right: 14px;

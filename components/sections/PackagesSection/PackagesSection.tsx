@@ -66,12 +66,10 @@ export default function PackagesSection({
             <div key={pkg.id} className={styles.packageCard}>
               <div className={styles.accentBar} aria-hidden="true" />
               <div className={styles.packageInner}>
-                {/* Card header */}
                 <div className={styles.packageHeader}>
                   <span className={styles.packageLabel}>
                     Package {String(index + 1).padStart(2, '0')}
                   </span>
-                  {/* Remove button: only rendered when there are multiple packages */}
                   {packages.length > 1 && (
                     <Button
                       variant="iconGhost"
@@ -83,7 +81,6 @@ export default function PackagesSection({
                   )}
                 </div>
 
-                {/* Label field — full width */}
                 <TextField
                   label="Label"
                   value={pkg.label}
@@ -91,7 +88,6 @@ export default function PackagesSection({
                   placeholder="e.g. Carton — books"
                 />
 
-                {/* Dimensions grid */}
                 <div className={styles.dimsGrid}>
                   <NumberField
                     label="Weight"
@@ -128,7 +124,6 @@ export default function PackagesSection({
                   />
                 </div>
 
-                {/* Declared value */}
                 <NumberField
                   label="Declared Value"
                   value={pkg.declaredValue}
@@ -142,7 +137,6 @@ export default function PackagesSection({
           ))
         )}
 
-        {/* Add package button */}
         <div className={styles.addRow}>
           <Button variant="ghostDashed" onClick={onAdd} ariaLabel="Add another package">
             <PlusIcon />

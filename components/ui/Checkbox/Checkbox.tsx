@@ -20,7 +20,6 @@ export default function Checkbox({
 
   return (
     <label htmlFor={id} className={styles.wrapper}>
-      {/* Visually hidden native input for keyboard + screen reader */}
       <input
         id={id}
         type="checkbox"
@@ -29,7 +28,6 @@ export default function Checkbox({
         className={styles.hiddenInput}
         aria-label={label}
       />
-      {/* Custom visual box */}
       <span className={`${styles.box} ${checked ? styles.boxChecked : ''}`} aria-hidden="true">
         {checked && (
           <svg

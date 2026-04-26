@@ -68,20 +68,17 @@ export default function ShipmentSection({
   return (
     <SectionCard eyebrow="01 — Shipment" title="Order details">
       <div className={styles.grid}>
-        {/* Order ID — read-only badge */}
         <div className={styles.orderIdField}>
           <span className={styles.label}>Order ID</span>
           <Badge variant="orderStamp">{orderId}</Badge>
         </div>
 
-        {/* Shipment date — custom date input with calendar icon */}
         <DateField
           label="Shipment Date"
           value={date}
           onChange={onDateChange}
         />
 
-        {/* Delivery type */}
         <div>
           <span className={styles.labelBlock}>Delivery Type</span>
           <SegmentedControl

@@ -65,7 +65,6 @@
   cursor: not-allowed;
 }
 
-/* Autofill override — prevents Chrome from applying blue background */
 .input:-webkit-autofill,
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,

@@ -21,7 +21,6 @@
   outline-offset: var(--focus-ring-offset);
 }
 
-/* ── Primary ── */
 .primary {
   height: 40px;
   padding: 0 20px;
@@ -40,7 +39,6 @@
   transform: scale(0.98);
 }
 
-/* ── Ghost Dashed (Add Package) ── */
 .ghostDashed {
   height: 40px;
   padding: 0 16px;
@@ -50,7 +48,6 @@
   font-size: var(--text-base);
   font-weight: var(--weight-medium);
   border: 1.5px dashed var(--color-border-mid);
-  /* CSS dashed borders don't support dash-length/gap natively — this is the standard approach */
 }
 
 .ghostDashed:hover {
@@ -64,7 +61,6 @@
   transform: scale(0.98);
 }
 
-/* ── Icon Ghost (Remove package ×) ── */
 .iconGhost {
   width: 24px;
   height: 24px;
@@ -91,7 +87,6 @@
   transform: scale(0.95);
 }
 
-/* ── Icon (leading add icon) ── */
 .icon {
   width: 16px;
   height: 16px;

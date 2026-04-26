@@ -5,24 +5,19 @@
   overflow: hidden;
   position: sticky;
   top: 24px;
-  /* The perforated top edge is rendered via the SVG inside */
 }
 
-/* ── Perforated top edge ── */
 .perforatedEdge {
   display: block;
   width: 100%;
   height: 16px;
-  /* Rendered as an SVG in the component */
 }
 
-/* ── Inner content ── */
 .inner {
   padding: var(--space-6);
   padding-top: var(--space-4);
 }
 
-/* ── Header row ── */
 .header {
   display: flex;
   align-items: flex-start;
@@ -30,14 +25,12 @@
   margin-bottom: var(--space-4);
 }
 
-/* Left column: manifest label + order ID stacked */
 .headerLeft {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-/* Right column: badge + date stacked, right-aligned */
 .headerRight {
   display: flex;
   flex-direction: column;
@@ -53,7 +46,6 @@
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
   display: block;
-  /* no margin-bottom — gap on headerLeft handles spacing */
 }
 
 .orderId {
@@ -68,17 +60,14 @@
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   text-align: right;
-  /* no margin-top — gap on headerRight handles spacing */
 }
 
-/* ── Divider ── */
 .divider {
   height: 1px;
   background: var(--color-border);
   margin: var(--space-4) 0;
 }
 
-/* ── Sender / Receiver block ── */
 .addressBlock {
   position: relative;
 }
@@ -109,7 +98,6 @@
   line-height: var(--leading-normal);
 }
 
-/* Address line (address string, city+pincode row) */
 .addressLine {
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -117,12 +105,10 @@
   line-height: var(--leading-normal);
 }
 
-/* "—" separator between city and pincode — no extra style needed */
 .addressSep {
   color: var(--color-text-tertiary);
 }
 
-/* Pincode rendered in mono */
 .addressPincode {
   font-family: var(--font-mono);
   font-size: var(--text-base);
@@ -136,7 +122,6 @@
   font-style: italic;
 }
 
-/* ── Connector between sender and receiver ── */
 .connectorWrapper {
   display: flex;
   justify-content: center;
@@ -152,7 +137,6 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  /* Dashed connector line */
   background: repeating-linear-gradient(
     to bottom,
     var(--color-border-mid) 0px,
@@ -176,13 +160,11 @@
   z-index: 1;
 }
 
-/* ── Packages section wrapper ── */
 .packagesSection {
   display: flex;
   flex-direction: column;
 }
 
-/* ── Indicators section wrapper ── */
 .indicatorsSection {
   display: flex;
   flex-direction: column;
@@ -190,7 +172,6 @@
   padding: var(--space-6) 0;
 }
 
-/* ── Packages ── */
 .sectionLabel {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
@@ -222,14 +203,12 @@
   margin-bottom: 2px;
 }
 
-/* "Untitled package" fallback — italic, tertiary color */
 .packageNameEmpty {
   font-style: italic;
   color: var(--color-text-tertiary);
   font-weight: var(--weight-regular);
 }
 
-/* Empty packages state inside preview */
 .packagesEmpty {
   border: 1px dashed var(--color-border-mid);
   border-radius: var(--radius-xl);
@@ -281,15 +260,12 @@
   margin-left: var(--space-4);
 }
 
-/* ── Indicators (chips) ── */
 .indicators {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  /* vertical rhythm handled by indicatorsSection padding and sectionLabel margin-bottom */
 }
 
-/* ── Totals footer ── */
 .totalsBar {
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-4);
@@ -350,7 +326,6 @@
   font-weight: var(--weight-regular);
 }
 
-/* Pulse runs on remount (key change) — highlights changed value */
 @keyframes valuePulse {
   0% {
     background-color: var(--color-accent-subtle);
@@ -392,7 +367,6 @@
   opacity: 0.7;
 }
 
-/* ── Barcode section ── */
 .barcodeSection {
   display: flex;
   flex-direction: column;
@@ -410,7 +384,6 @@
   text-transform: uppercase;
 }
 
-/* ── Manifest footer ── */
 .manifestFooter {
   text-align: center;
   padding-top: var(--space-4);
@@ -422,14 +395,12 @@
   text-transform: uppercase;
 }
 
-/* ── Mobile: un-sticky the preview so it scrolls naturally ── */
 @media (max-width: 768px) {
   .preview {
     position: static;
   }
 }
 
-/* ── Empty state ── */
 .emptyState {
   display: flex;
   flex-direction: column;
@@ -439,7 +410,6 @@
   text-align: center;
 }
 
-/* Grows to fill height, keeps icon+text vertically centered */
 .emptyMain {
   flex: 1;
   display: flex;
@@ -455,7 +425,6 @@
   gap: 4px;
 }
 
-/* Isometric box icon — stroke via CSS so custom property resolves */
 .emptyBoxIcon {
   stroke: var(--color-border-mid);
   stroke-width: 1.5px;
@@ -474,7 +443,6 @@
   color: var(--color-text-tertiary);
 }
 
-/* Anchored to the bottom of the empty state */
 .emptyAwaitingLabel {
   font-family: var(--font-sans);
   font-size: var(--text-xs);

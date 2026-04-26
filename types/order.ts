@@ -6,7 +6,7 @@ export interface Address {
 }
 
 export interface Package {
-  id: string; // crypto.randomUUID() — never array index
+  id: string;
   label: string;
   weight: string;
   length: string;

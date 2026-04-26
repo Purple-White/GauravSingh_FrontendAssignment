@@ -12,7 +12,7 @@ interface SegmentedControlProps<T extends string> {
   segments: Segment<T>[];
   value: T;
   onChange: (value: T) => void;
-  label: string; // for aria-label on the group
+  label: string;
 }
 
 export default function SegmentedControl<T extends string>({

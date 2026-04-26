@@ -31,7 +31,7 @@
     background var(--transition-fast),
     border-color var(--transition-fast),
     box-shadow var(--transition-fast);
-  margin-top: 2px; /* optical align with label top */
+  margin-top: 2px;
 }
 
 .boxChecked {

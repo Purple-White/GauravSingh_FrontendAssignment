@@ -4,7 +4,6 @@
   padding-bottom: 80px;
 }
 
-/* ── Page header ── */
 .pageHeader {
   padding-top: var(--space-12);
   padding-bottom: var(--space-8);
@@ -37,7 +36,6 @@
   line-height: var(--leading-normal);
 }
 
-/* ── Two-column content grid ── */
 .contentGrid {
   display: grid;
   grid-template-columns: 1fr var(--preview-width);
@@ -45,7 +43,6 @@
   align-items: start;
 }
 
-/* ── Tablet ── */
 @media (max-width: 1024px) {
   .page {
     padding: 0 var(--layout-padding-tablet);
@@ -58,7 +55,6 @@
   }
 }
 
-/* ── Mobile ── */
 @media (max-width: 768px) {
   .page {
     padding: 0 var(--layout-padding-mobile);
@@ -71,7 +67,6 @@
   }
 }
 
-/* ── Mobile sticky pill ── */
 .manifestPill {
   display: none;
 }

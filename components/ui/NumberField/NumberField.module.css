@@ -35,7 +35,6 @@
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
   appearance: none;
-  /* Hide spinner arrows */
   -moz-appearance: textfield;
 }
 
@@ -74,7 +73,6 @@
   cursor: not-allowed;
 }
 
-/* Autofill override — prevents Chrome from applying blue background */
 .input:-webkit-autofill,
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
@@ -85,7 +83,6 @@
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* With prefix (₹ symbol) */
 .hasPrefix .input {
   padding-left: 28px;
 }
@@ -101,7 +98,6 @@
   line-height: 1;
 }
 
-/* With suffix (unit label) */
 .hasSuffix .input {
   padding-right: 40px;
 }

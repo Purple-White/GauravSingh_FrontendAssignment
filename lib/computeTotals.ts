@@ -1,9 +1,5 @@
 import type { Package, ComputedTotals } from '@/types/order';
 
-/**
- * Derives shipment totals from the package list.
- * Used via useMemo in OrderForm — never stored as state.
- */
 export function computeTotals(packages: Package[]): ComputedTotals {
   let totalWeight = 0;
   let totalVolumetric = 0;

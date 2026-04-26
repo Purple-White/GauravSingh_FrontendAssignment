@@ -49,7 +49,6 @@ export default function AddressSection({
   };
 
   const handlePincodeChange = (value: string) => {
-    // Strip non-digits and cap at 6 chars
     const digits = value.replace(/\D/g, '').slice(0, 6);
     onChange({ ...address, pincode: digits });
     if (pincodeError && digits.length < 6) setPincodeError(null);

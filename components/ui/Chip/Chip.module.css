@@ -22,19 +22,16 @@
   flex-shrink: 0;
 }
 
-/* ── Fragile ── */
 .fragile {
   background: var(--color-warning-bg);
   color: var(--color-warning);
 }
 
-/* ── Insured ── */
 .insured {
   background: var(--color-success-bg);
   color: var(--color-success);
 }
 
-/* ── Inactive ── */
 .inactive {
   background: var(--color-subtle);
   color: var(--color-text-tertiary);

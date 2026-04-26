@@ -18,8 +18,6 @@ interface ShipmentPreviewProps {
   totals: ComputedTotals;
 }
 
-// ── Helpers ────────────────────────────────────────────────────────────────
-
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 function formatDate(iso: string): string {
@@ -57,8 +55,6 @@ function hasAnyPackageData(packages: Package[]): boolean {
   );
 }
 
-// ── SVG atoms ──────────────────────────────────────────────────────────────
-
 function IsometricBoxIcon() {
   return (
     <svg
@@ -90,7 +86,6 @@ function SmallBoxIcon() {
   );
 }
 
-/** Inline perforated-edge SVG */
 function PerforatedEdge() {
   return (
     <svg
@@ -109,8 +104,6 @@ function PerforatedEdge() {
     </svg>
   );
 }
-
-// ── Address block ──────────────────────────────────────────────────────────
 
 function AddressBlock({ role, addr }: { role: 'From' | 'To'; addr: Address }) {
   const empty = isAddrEmpty(addr);
@@ -144,8 +137,6 @@ function AddressBlock({ role, addr }: { role: 'From' | 'To'; addr: Address }) {
   );
 }
 
-// ── Main component ─────────────────────────────────────────────────────────
-
 export default function ShipmentPreview({
   orderId,
   date,
@@ -169,7 +160,6 @@ export default function ShipmentPreview({
       <PerforatedEdge />
 
       {empty ? (
-        /* ── EMPTY STATE ── */
         <div className={styles.emptyState}>
           <div className={styles.emptyMain}>
             <IsometricBoxIcon />
@@ -184,8 +174,6 @@ export default function ShipmentPreview({
         </div>
       ) : (
         <div className={styles.inner}>
-
-          {/* ── HEADER ── */}
           <div className={styles.header}>
             <div className={styles.headerLeft}>
               <span className={styles.manifestLabel}>Shipment Manifest</span>
@@ -201,10 +189,8 @@ export default function ShipmentPreview({
 
           <div className={styles.divider} />
 
-          {/* ── FROM ── */}
           <AddressBlock role="From" addr={consignor} />
 
-          {/* ── CONNECTOR ── */}
           <div className={styles.connectorWrapper} aria-hidden="true">
             <div className={styles.connectorLine} />
             <div className={styles.connectorDot}>
@@ -212,12 +198,10 @@ export default function ShipmentPreview({
             </div>
           </div>
 
-          {/* ── TO ── */}
           <AddressBlock role="To" addr={consignee} />
 
           <div className={styles.divider} />
 
-          {/* ── PACKAGES ── */}
           <div className={styles.packagesSection}>
             <span className={styles.sectionLabel}>
               Packages ({totals.packageCount})
@@ -252,7 +236,6 @@ export default function ShipmentPreview({
             )}
           </div>
 
-          {/* ── INDICATORS ── */}
           <div className={styles.indicatorsSection}>
             <span className={styles.sectionLabel}>Indicators</span>
             <div className={styles.indicators}>
@@ -267,7 +250,6 @@ export default function ShipmentPreview({
             </div>
           </div>
 
-          {/* ── TOTALS ── */}
           <div className={styles.totalsBar}>
             <div className={styles.totalRow}>
               <span className={styles.totalLabel}>Packages</span>
@@ -314,17 +296,14 @@ export default function ShipmentPreview({
             </div>
           </div>
 
-          {/* ── BARCODE ── */}
           <div className={styles.barcodeSection}>
             <Barcode value={orderId} />
             <span className={styles.barcodeLabel}>{orderId}</span>
           </div>
 
-          {/* ── MANIFEST FOOTER ── */}
           <div className={styles.manifestFooter}>
             End of Manifest · {orderId}
           </div>
-
         </div>
       )}
     </aside>

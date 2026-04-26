@@ -1,11 +1,3 @@
-/*
- * globals.css
- * ─────────────────────────────────────────────────────────────────────────────
- * ONLY next/font CSS variable injection + bare minimal resets.
- * NO design tokens here — those live in tokens.module.css.
- * ─────────────────────────────────────────────────────────────────────────────
- */
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +17,6 @@ body {
   min-height: 100vh;
 }
 
-/* Remove default button/input styles so we start clean */
 button {
   cursor: pointer;
   border: none;
@@ -38,13 +29,11 @@ input, textarea, select {
   color: inherit;
 }
 
-/* Smooth focus outline for keyboard nav */
 :focus-visible {
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
   outline-offset: var(--focus-ring-offset);
 }
 
-/* Remove default outline only when we have our own */
 :focus:not(:focus-visible) {
   outline: none;
 }
