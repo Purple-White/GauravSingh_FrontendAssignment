@@ -1,12 +1,12 @@
 import type { Address, Package } from '@/types/order';
 
 function isAddressEmpty(a: Address): boolean {
-  return !a.name && !a.address && !a.city && !a.pincode;
+  return !a.name.trim() && !a.address.trim() && !a.city.trim() && !a.pincode.trim();
 }
 
 function isPackageEmpty(p: Package): boolean {
   return (
-    !p.label &&
+    !p.label.trim() &&
     !p.weight &&
     !p.length &&
     !p.width &&

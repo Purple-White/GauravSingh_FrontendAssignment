@@ -41,7 +41,7 @@ function formatDims(pkg: Package): string {
 }
 
 const isAddrEmpty = (addr: Address) =>
-  !addr.name && !addr.address && !addr.city && !addr.pincode;
+  !addr.name.trim() && !addr.address.trim() && !addr.city.trim() && !addr.pincode.trim();
 
 function hasAnyPackageData(packages: Package[]): boolean {
   return packages.some(

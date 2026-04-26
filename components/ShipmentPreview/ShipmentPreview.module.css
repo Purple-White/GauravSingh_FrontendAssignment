@@ -89,6 +89,9 @@
   font-weight: var(--weight-medium);
   color: var(--color-text-primary);
   margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .addressDetails {
@@ -103,6 +106,7 @@
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
+  word-break: break-word;
 }
 
 .addressSep {
@@ -201,6 +205,9 @@
   font-weight: var(--weight-medium);
   color: var(--color-text-primary);
   margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .packageNameEmpty {

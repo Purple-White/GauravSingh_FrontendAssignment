@@ -8,6 +8,7 @@ import styles from './ShipmentSection.module.css';
 interface ShipmentSectionProps {
   orderId: string;
   date: string;
+  minDate?: string;
   deliveryType: DeliveryType;
   onDateChange: (v: string) => void;
   onDeliveryTypeChange: (v: DeliveryType) => void;
@@ -31,10 +32,11 @@ function CalendarIcon() {
 interface DateFieldProps {
   label: string;
   value: string;
+  min?: string;
   onChange: (v: string) => void;
 }
 
-function DateField({ label, value, onChange }: DateFieldProps) {
+function DateField({ label, value, min, onChange }: DateFieldProps) {
   const id = useId();
   return (
     <div className={styles.dateField}>
@@ -46,6 +48,7 @@ function DateField({ label, value, onChange }: DateFieldProps) {
           id={id}
           type="date"
           value={value}
+          min={min}
           onChange={(e) => onChange(e.target.value)}
           className={styles.dateInput}
           autoComplete="off"
@@ -61,6 +64,7 @@ function DateField({ label, value, onChange }: DateFieldProps) {
 export default function ShipmentSection({
   orderId,
   date,
+  minDate,
   deliveryType,
   onDateChange,
   onDeliveryTypeChange,
@@ -76,6 +80,7 @@ export default function ShipmentSection({
         <DateField
           label="Shipment Date"
           value={date}
+          min={minDate}
           onChange={onDateChange}
         />
 

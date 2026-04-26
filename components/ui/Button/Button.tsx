@@ -2,7 +2,7 @@
 
 import styles from './Button.module.css';
 
-type ButtonVariant = 'primary' | 'ghostDashed' | 'iconGhost';
+type ButtonVariant = 'primary' | 'ghost' | 'ghostDashed' | 'iconGhost';
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -23,6 +23,7 @@ export default function Button({
 }: ButtonProps) {
   const variantClass = {
     primary: styles.primary,
+    ghost: styles.ghost,
     ghostDashed: styles.ghostDashed,
     iconGhost: styles.iconGhost,
   }[variant];

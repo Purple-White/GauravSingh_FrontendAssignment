@@ -8,6 +8,7 @@ import AddressSection from '@/components/sections/AddressSection/AddressSection'
 import PackagesSection from '@/components/sections/PackagesSection/PackagesSection';
 import OptionsSection from '@/components/sections/OptionsSection/OptionsSection';
 import ShipmentPreview from '@/components/ShipmentPreview/ShipmentPreview';
+import Button from '@/components/ui/Button/Button';
 import type { FormState, Address, Package, DeliveryType } from '@/types/order';
 import styles from './OrderForm.module.css';
 
@@ -84,12 +85,26 @@ export default function OrderForm() {
     }));
   };
 
+  const handleReset = () => {
+    setOrderId(generateOrderId());
+    setForm({
+      date: today,
+      deliveryType: 'standard',
+      consignor: { ...EMPTY_ADDRESS },
+      consignee: { ...EMPTY_ADDRESS },
+      packages: [createEmptyPackage()],
+      fragile: false,
+      insured: false,
+    });
+  };
+
   return (
     <>
       <div className={styles.form} id="order-form">
         <ShipmentSection
           orderId={orderId}
           date={form.date}
+          minDate={today}
           deliveryType={form.deliveryType}
           onDateChange={(v) => setField('date', v)}
           onDeliveryTypeChange={(v: DeliveryType) => setField('deliveryType', v)}
@@ -122,6 +137,12 @@ export default function OrderForm() {
           onFragileChange={(v) => setField('fragile', v)}
           onInsuredChange={(v) => setField('insured', v)}
         />
+
+        <div className={styles.formActions}>
+          <Button variant="ghost" onClick={handleReset}>
+            New order
+          </Button>
+        </div>
       </div>
 
       <ShipmentPreview

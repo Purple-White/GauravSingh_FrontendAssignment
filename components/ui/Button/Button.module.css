@@ -39,6 +39,27 @@
   transform: scale(0.98);
 }
 
+.ghost {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-lg);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  border: 1px solid var(--color-border-mid);
+}
+
+.ghost:hover {
+  background: var(--color-subtle);
+  border-color: var(--color-border-dark);
+  color: var(--color-text-primary);
+}
+
+.ghost:active {
+  transform: scale(0.98);
+}
+
 .ghostDashed {
   height: 40px;
   padding: 0 16px;

@@ -50,6 +50,9 @@ export default function NumberField({
           type="number"
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          onKeyDown={(e) => {
+            if (['e', 'E', '+', '-'].includes(e.key)) e.preventDefault();
+          }}
           placeholder={placeholder}
           disabled={disabled}
           min={min}
